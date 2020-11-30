@@ -34,7 +34,6 @@ exports[`<Banner /> Should render correctly 1`] = `
 
 .c0 {
   position: relative;
-  box-shadow: 0 0.4rem 0.5rem 0 rgba(0,0,0,0.2);
 }
 
 .c1 {
@@ -68,6 +67,22 @@ exports[`<Banner /> Should render correctly 1`] = `
 .c4 strong {
   color: #F231A5;
   font-weight: 600;
+}
+
+@media (max-width:1170px) {
+  .c0 .styles__Wrapper-omfef0-0 {
+    right: 0;
+  }
+
+  .c0 .styles__Wrapper-omfef0-0::before {
+    display: none;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 {
+    box-shadow: 0 0.4rem 0.5rem 0 rgba(0,0,0,0.2);
+  }
 }
 
 @media (min-width:768px) {

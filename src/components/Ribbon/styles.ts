@@ -46,7 +46,7 @@ export const Wrapper = styled.div<Omit<RibbonProps, 'children'>>`
 		align-items: center;
 		font-weight: ${theme.font.bold};
 		color: ${theme.colors.white};
-		
+
 		&::before {
 			content: '';
 			position: absolute;
