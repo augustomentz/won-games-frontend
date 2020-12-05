@@ -166,7 +166,7 @@ exports[`<Footer /> Should be render the footer with 4 columns topics 1`] = `
         class="c4 c5"
         color="black"
       >
-        Contact
+        Contact Us
       </h2>
       <a
         href="mailto:sac@wongames.com"
@@ -271,4 +271,4 @@ exports[`<Footer /> Should be render the footer with 4 columns topics 1`] = `
     Won Games 2020 © All rights reserved.
   </div>
 </footer>
-`;
+`
