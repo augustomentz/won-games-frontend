@@ -16,7 +16,7 @@ export const InputWrapper = styled.div`
 		border-color: ${theme.colors.lightGray};
 
 		&:focus-within {
-			box-shadow: 0 0 0.5rem ${theme.colors.red};
+			box-shadow: 0 0 0.5rem ${theme.colors.primary};
 		}
 	`}
 `

@@ -20,7 +20,7 @@ exports[`<TextField /> Renders with error 1`] = `
 }
 
 .c4:focus-within {
-  box-shadow: 0 0 0.5rem #FF6347;
+  box-shadow: 0 0 0.5rem #F231A5;
 }
 
 .c8 {

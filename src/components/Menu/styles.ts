@@ -1,11 +1,13 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
+
 export const Wrapper = styled.menu`
 	${({ theme }) => css`
 		display: flex;
 		align-items: center;
 		padding: ${theme.spacings.small} 0;
 		position: relative;
+		z-index: ${theme.layers.menu};
 	`}
 `
 
@@ -90,10 +92,11 @@ export const MenuFull = styled.nav<MenuFullProps>`
 		flex-direction: column;
 		justify-content: space-between;
 		background: ${theme.colors.white};
-		position: absolute;
+		position: fixed;
 		top: 0;
 		bottom: 0;
 		left: 0;
+		right: 0;
 		height: 100vh;
 		width: 100%;
 		overflow: hidden;

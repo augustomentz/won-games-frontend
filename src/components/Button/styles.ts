@@ -1,7 +1,7 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 import { ButtonProps } from '.'
 import { darken } from 'polished'
-type WrapperProps = { hasIcon: boolean } & Omit<ButtonProps, 'children'>
+export type WrapperProps = { hasIcon: boolean } & Omit<ButtonProps, 'children'>
 
 const wrapperModifiers = {
 	small: (theme: DefaultTheme) => css`
