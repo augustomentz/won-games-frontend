@@ -15,7 +15,7 @@ export function getStaticProps() {
 		props: {
 			banners: BannersMock,
 			gamesSlider: GamesMock,
-			highlight: HighlightMock,
+			mostPopularHighlight: HighlightMock,
 			mostPopularGames: GamesMock,
 			upcomingGames: GamesMock,
 			upcomingHighlight: HighlightMock,
