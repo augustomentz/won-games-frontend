@@ -83,8 +83,8 @@ export const Close = styled.div`
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		top: 0;
-		left: 0;
+		top: 2.5rem;
+		right: 2.5rem;
 		text-align: right;
 		cursor: pointer;
 	`}

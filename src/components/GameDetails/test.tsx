@@ -37,6 +37,18 @@ describe('<GameDetails />', () => {
 		expect(screen.getByRole('heading', { name: /genre/i })).toBeInTheDocument()
 	})
 
+	it('Should render the publisher', () => {
+		renderWithTheme(<GameDetails {...props} />)
+
+		expect(screen.getByText(/2k/i)).toBeInTheDocument()
+	})
+
+	it('Should render the developer', () => {
+		renderWithTheme(<GameDetails {...props} />)
+
+		expect(screen.getByText(/different tales/i)).toBeInTheDocument()
+	})
+
 	it('Should render the platform icons', () => {
 		renderWithTheme(<GameDetails {...props} />)
 

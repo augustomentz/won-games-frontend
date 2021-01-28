@@ -70,11 +70,11 @@ exports[`<Banner /> Should render correctly 1`] = `
 }
 
 @media (max-width:1170px) {
-  .c0 .styles__Wrapper-omfef0-0 {
+  .c0 .sc-AxirZ {
     right: 0;
   }
 
-  .c0 .styles__Wrapper-omfef0-0::before {
+  .c0 .sc-AxirZ::before {
     display: none;
   }
 }
@@ -151,4 +151,4 @@ exports[`<Banner /> Should render correctly 1`] = `
     </a>
   </div>
 </main>
-`;
+`
