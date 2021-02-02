@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Form /> Should be render the heading 1`] = `
-.c0 .sc-AxgMl {
+.c0 .sc-jSgupP {
   margin: 0.8rem 0;
 }
 
-.c0 .sc-AxheI {
+.c0 .sc-gKsewC {
   margin: 3.2rem auto 1.6rem;
 }
 
