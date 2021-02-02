@@ -3,7 +3,7 @@ import media from 'styled-media-query'
 
 export const Wrapper = styled.div`
 	${({ theme }) => css`
-		margin: ${theme.spacings.small};
+		margin: ${theme.spacings.small} 0;
 	`}
 `
 

@@ -11,7 +11,7 @@ export const Wrapper = styled(Container).attrs({ as: 'section' })`
 		${HeadingStyles.Wrapper},
 		${HighlightStyles.Wrapper},
 		${GameCardSliderStyles.Wrapper} {
-			margin-bottom: ${theme.spacings.medium}
+			margin-bottom: ${theme.spacings.medium};
 		}
 
 		${HighlightStyles.Wrapper} {
