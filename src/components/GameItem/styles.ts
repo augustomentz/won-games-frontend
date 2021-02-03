@@ -5,7 +5,6 @@ export const Wrapper = styled.div`
 	${({ theme }) => css`
 		padding: ${theme.spacings.small};
 		border-bottom: 0.1rem solid ${theme.colors.lightGray};
-		background: white;
 
 		${media.greaterThan('medium')`
 			display: flex;
