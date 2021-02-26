@@ -21,15 +21,6 @@ jest.mock('components/Showcase', () => {
 	}
 })
 
-jest.mock('components/Empty', () => {
-	return {
-		__esModule: true,
-		default: function Mock() {
-			return <div data-testid="Mock Empty"></div>
-		}
-	}
-})
-
 describe('<Wishlist />', () => {
 	it('Should render correctly', () => {
 		renderWithTheme(<Wishlist {...props} />)
@@ -50,7 +41,9 @@ describe('<Wishlist />', () => {
 			/>
 		)
 
-		expect(screen.getByTestId('Mock Empty')).toBeInTheDocument()
 		expect(screen.queryByText(/population zero/i)).not.toBeInTheDocument()
+		expect(
+			screen.getByRole('heading', { name: /your wishlist is empty/i })
+		).toBeInTheDocument()
 	})
 })
