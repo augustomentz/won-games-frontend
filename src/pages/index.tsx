@@ -9,8 +9,9 @@ export default function Index(props: HomeTemplateProps) {
 }
 
 // getStaticProps => Gerar estático em build time
-// getServerSideProps => Gerar via SSR a cada request
-export function getStaticProps() {
+// getServerSideProps => Gerar via SSR a cada request (nunca vai para o bundle do client)
+// getInitialProps => Gerar via SSR a cada request (vai para o bundle do client, faza hydrate do lado do client depois do 1 req)
+export async function getServerSideProps() {
 	return {
 		props: {
 			banners: BannersMock,

@@ -1,6 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<GameInfo /> Should render game informations 1`] = `
+.c7 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.c1 {
+  color: #030517;
+  position: relative;
+  margin-bottom: 3.2rem;
+  font-size: 2.0rem;
+}
+
+.c1::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1rem;
+  width: 5rem;
+  border-bottom: 0.5rem solid #F231A5;
+}
+
 .c3 {
   position: absolute;
   top: 1.6rem;
@@ -41,67 +63,6 @@ exports[`<GameInfo /> Should render game informations 1`] = `
 .c3::before {
   border-left-color: #1f8a7d;
   border-top-color: #1f8a7d;
-}
-
-.c0 {
-  position: relative;
-  background: #FAFAFA;
-  padding: 2.4rem;
-}
-
-.c0 .c2 {
-  right: -1rem;
-}
-
-.c0 .c2:before {
-  border-right-width: 1rem;
-}
-
-.c4 {
-  font-size: 1.4rem;
-  color: #8F8F8F;
-  margin-bottom: 2.4rem;
-}
-
-.c5 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-align-items: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
-.c5 > button {
-  width: 100%;
-  margin-bottom: 0.8rem;
-}
-
-.c7 {
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
-}
-
-.c1 {
-  color: #030517;
-  position: relative;
-  margin-bottom: 3.2rem;
-  font-size: 2.0rem;
-}
-
-.c1::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -1rem;
-  width: 5rem;
-  border-bottom: 0.5rem solid #F231A5;
 }
 
 .c6 {
@@ -188,6 +149,51 @@ exports[`<GameInfo /> Should render game informations 1`] = `
   color: #e20e8d;
 }
 
+.c0 {
+  position: relative;
+  background: #FAFAFA;
+  padding: 2.4rem;
+}
+
+.c0 .c2 {
+  right: -1rem;
+}
+
+.c0 .c2:before {
+  border-right-width: 1rem;
+}
+
+.c4 {
+  font-size: 1.4rem;
+  color: #8F8F8F;
+  margin-bottom: 2.4rem;
+}
+
+.c5 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c5 > button {
+  width: 100%;
+  margin-bottom: 0.8rem;
+}
+
+@media (min-width:768px) {
+  .c1 {
+    font-size: 2.8rem;
+  }
+}
+
 @media (min-width:768px) {
   .c0 .c2 {
     right: 2.4rem;
@@ -219,12 +225,6 @@ exports[`<GameInfo /> Should render game informations 1`] = `
   }
 }
 
-@media (min-width:768px) {
-  .c1 {
-    font-size: 2.8rem;
-  }
-}
-
 <div
   class="c0"
 >
@@ -238,7 +238,7 @@ exports[`<GameInfo /> Should render game informations 1`] = `
     class="c2 c3"
     color="secondary"
   >
-    $210,00
+    $210.00
   </div>
   <p
     class="c4"
