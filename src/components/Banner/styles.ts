@@ -31,7 +31,7 @@ export const Image = styled.div<ImageProps>`
 		height: 23rem;
 		background-color: ${theme.colors.lightGray};
 		background-image: url(${src});
-		background-position: 'center center';
+		background-position: center center;
 		background-size: cover;
 
 		${media.greaterThan('medium')`

@@ -41,7 +41,7 @@ exports[`<Banner /> Should render correctly 1`] = `
   height: 23rem;
   background-color: #EAEAEA;
   background-image: url(https://source.unsplash.com/user/willianjusten/1042x500);
-  background-position: 'center center';
+  background-position: center center;
   background-size: cover;
 }
 
