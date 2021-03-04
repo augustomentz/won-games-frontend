@@ -1,19 +1,26 @@
+import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 
 import { initApollo } from 'utils/apollo'
+
 import { QueryGames, QueryGamesVariables } from 'graphql/generated/QueryGames'
 import {
 	QueryGameBySlug,
 	QueryGameBySlugVariables
 } from 'graphql/generated/QueryGameBySlug'
+import { QueryRecommended } from 'graphql/generated/QueryRecommended'
+import {
+	QueryUpcoming,
+	QueryUpcomingVariables
+} from 'graphql/generated/QueryUpcoming'
 
+import { QUERY_RECOMMENDED } from 'graphql/queries/recommended'
+import { QUERY_UPCOMING } from 'graphql/queries/upcoming'
 import { QUERY_GAMES, QUERY_GAME_BY_SLUG } from 'graphql/queries/games'
 
-import Game, { GameTemplateProps } from 'templates/Game'
+import { GamesMapper, HighlightMapper } from 'utils/mappers'
 
-import gamesMock from 'components/GameCardSlider/mock'
-import highlightMock from 'components/Highlight/mock'
-import { GetStaticProps } from 'next'
+import Game, { GameTemplateProps } from 'templates/Game'
 
 const apolloClient = initApollo()
 
@@ -41,6 +48,7 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+	// GET GAME DATA
 	const { data } = await apolloClient.query<
 		QueryGameBySlug,
 		QueryGameBySlugVariables
@@ -49,7 +57,28 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 		variables: { slug: `${params && params.slug}` }
 	})
 
+	if (!data.games.length) {
+		return { notFound: true }
+	}
+
 	const [game] = data.games
+
+	// GET RECOMMENDED GAMES DATA
+	const {
+		data: recommendedSection
+	} = await apolloClient.query<QueryRecommended>({
+		query: QUERY_RECOMMENDED
+	})
+
+	// GET UPCOMING GAMES ADN HIGHLIGHT
+	const TODAY = new Date().toISOString().slice(0, 10)
+	const { data: upcoming } = await apolloClient.query<
+		QueryUpcoming,
+		QueryUpcomingVariables
+	>({
+		query: QUERY_UPCOMING,
+		variables: { date: TODAY }
+	})
 
 	return {
 		props: {
@@ -73,9 +102,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 				rating: game.rating,
 				genres: game.categories.map((category) => category.name)
 			},
-			upcomingGames: gamesMock,
-			upcomingHighlight: highlightMock,
-			recommendedGames: gamesMock
+			upcomingTitle: upcoming.showcase?.upcomingGames?.title,
+			upcomingGames: GamesMapper(upcoming.upcomingGames),
+			upcomingHighlight: HighlightMapper(
+				upcoming.showcase?.upcomingGames?.highlight
+			),
+			recommendedTitle: recommendedSection.recommended?.section?.title,
+			recommendedGames: GamesMapper(
+				recommendedSection.recommended?.section?.games
+			)
 		}
 	}
 }
